@@ -1,0 +1,12 @@
+Initial str: SomeStringSample
+Changed str: 
+
+Initial str: SomeStringSample
+Changed str: 
+
+Initial str: hello {Eugene} I am {Evgen} too
+Changed str: EugeneEvgen
+
+Initial str: SomeStringSample
+Changed str: 
+
