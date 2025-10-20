@@ -6,7 +6,7 @@
 #include <wchar.h>
 
 // Замена для обычных строк (char*)
-bool strreplace(char* str, const char* oldSubstr, const char* newSubstr, DWORD bufferSize) 
+bool strreplace(char* str, const char* oldSubstr, const char* newSubstr, DWORD bufferSize)
 {
     if (!str || !oldSubstr || !newSubstr || bufferSize == 0) 
     {
@@ -41,7 +41,7 @@ bool strreplace(char* str, const char* oldSubstr, const char* newSubstr, DWORD b
 }
 
 // Замена для Unicode-строк (wchar_t*)
-bool strreplace(wchar_t* str, const wchar_t* oldSubstr, const wchar_t* newSubstr, DWORD bufferSize) 
+bool strreplace(wchar_t* str, const wchar_t* oldSubstr, const wchar_t* newSubstr, DWORD bufferSize)
 {
     if (!str || !oldSubstr || !newSubstr || bufferSize == 0) 
     {
@@ -278,38 +278,88 @@ int getstringencoding(const wchar_t* str, int length) {
 
 int main()
 {
-
-    const std::wstring wstr = L"Hello";
-
     
-
-
-    // CP_UTF8 - кодовая страница для UTF-8.
-    // -1 означает, что строка null-terminated.
+    /*Перевод из ANSII в Wide*/
+    const std::wstring wstr = L"Hello";
     int bufferSize = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1 /*null-terminated*/, nullptr, 0 /*размер буфера, если 0, то расчитать буфер*/, nullptr, nullptr);
-    // Используем std::vector для безопасного выделения памяти.
     std::vector<char> buffer(bufferSize);
     WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, buffer.data(), bufferSize, nullptr, nullptr);
-
-    // Возвращаем результат в виде std::string.
     std::string convertedStr = std::string(buffer.data());
+    std::cout << convertedStr << std::endl;
+    
+    /*Сообщение об ошибке*/
+    /*SetLastError(ERROR_ABIOS_ERROR);
+    DWORD errorCode = GetLastError();
+    if (errorCode == 0) {
+        std::wcout << L"Ошибок нет.\n";
+    }
+
+    LPWSTR lpMsgBuf = nullptr;
+    DWORD dwChars = FormatMessageW(
+        FORMAT_MESSAGE_ALLOCATE_BUFFER |
+        FORMAT_MESSAGE_FROM_SYSTEM |
+        FORMAT_MESSAGE_IGNORE_INSERTS,
+        NULL,
+        errorCode,
+        MAKELANGID(LANG_ENGLISH, SUBLANG_DEFAULT),
+        reinterpret_cast<LPWSTR>(&lpMsgBuf),
+        0,
+        NULL);
+
+    std::wstring errorMessage;
+    errorMessage = std::wstring(lpMsgBuf);
+    std::wcout << errorMessage;*/
+    
+    
+
+    std::string initialStrANSII = "My string super strength ANSII";
+    std::string oldDubStrANSII = "str";
+    std::string newSubStrANSII = "Power";
+    int bufferSizeForReplaceANSII = 256;
+
+    char* finalStrANSII = new char[initialStrANSII.length() + 1];
+    strcpy(finalStrANSII, initialStrANSII.c_str());
+
+    strreplace(finalStrANSII, oldDubStrANSII.c_str(), newSubStrANSII.c_str(), bufferSizeForReplaceANSII);
+
+
+
+
+    std::wstring initialStrWIDE = L"My string super strength WIDE";
+    std::wstring oldDubStrWIDE = L"str";
+    std::wstring newSubStrWIDE = L"Power";
+    int bufferSizeForReplaceWIDE = 256;
+
+    wchar_t* finalStrWIDE = new wchar_t[initialStrWIDE.length() + 1];
+    wcscpy(finalStrWIDE, initialStrWIDE.c_str());
+
+    strreplace(finalStrWIDE, oldDubStrWIDE.c_str(), newSubStrWIDE.c_str(), bufferSizeForReplaceWIDE);
+
+    std::cout << finalStrANSII << "\n";
+    std::wcout << finalStrWIDE << L"\n";
+    
+
+
+
+
+    std::string StrToParseANSII = "zerouth,first,second,third,fourth";
+    int bufferSizeForParseANSII = 64;
+    char *parsedStrANSII = new char[bufferSizeForParseANSII];
+    parsecsventry(StrToParseANSII.c_str(), 3, parsedStrANSII, bufferSizeForParseANSII);
+    std::cout << parsedStrANSII << "\n";
+    
+
+    std::wstring StrToParseWIDE = L"zerouth,first,second,third,fourth";
+    int bufferSizeForParseWIDE = 64;
+    wchar_t* parsedStrWIDE = new wchar_t[bufferSizeForParseWIDE];
+    parsecsventry(StrToParseWIDE.c_str(), 3, parsedStrWIDE, bufferSizeForParseWIDE);
+    std::wcout << parsedStrWIDE << L"\n";
+
+    std::string strToGetEncodingFrom = u8"Here is the string";
 
     
-        LPWSTR lpMsgBuf = nullptr;
-        DWORD dwChars = FormatMessageW(
-            FORMAT_MESSAGE_ALLOCATE_BUFFER |
-            FORMAT_MESSAGE_FROM_SYSTEM |
-            FORMAT_MESSAGE_IGNORE_INSERTS,
-            NULL,
-            GetLastError(),
-            MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-            reinterpret_cast<LPWSTR>(&lpMsgBuf),
-            0,
-            NULL);
-    
 
+    int encoding = getstringencoding(strToGetEncodingFrom.c_str(), strToGetEncodingFrom.length());
+    std::cout << strToGetEncodingFrom << " in encoding " << encoding << " what means utf8\n";
 
-
-    std::cout << "Hello World!\n" ;
-    std::wcout << lpMsgBuf;
 }
