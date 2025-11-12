@@ -1,0 +1,3 @@
+﻿  ConsoleLab5_var5.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\type_traits(1715,67): warning C4244: 'argument': conversion from 'unsigned __int64' to 'int', possible loss of data
+  ConsoleLab5_var5.vcxproj -> F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab5_var5\x64\Debug\ConsoleLab5_var5.exe
