@@ -172,7 +172,7 @@ int main()
 {
 	
 
-	//firstTask();
+	firstTask();
 	//secondTask();
 	thirdTask();
 
