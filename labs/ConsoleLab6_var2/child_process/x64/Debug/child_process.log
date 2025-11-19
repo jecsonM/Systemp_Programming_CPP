@@ -1,0 +1,4 @@
+﻿  child_process.cpp
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab6_var2\child_process\child_process.cpp(2,9): warning C4005: 'UNICODE': macro redefinition
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab6_var2\child_process\child_process.cpp(3,9): warning C4005: '_UNICODE': macro redefinition
+  child_process.vcxproj -> F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab6_var2\x64\Debug\child_process.exe
