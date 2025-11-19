@@ -1,5 +1,6 @@
 ﻿#include <windows.h>
 #include <iostream>
+#include<fstream>
 #include <string>
 using namespace std;
 
@@ -122,7 +123,18 @@ DWORD WINAPI Reader(LPVOID param) {
     for (int i = 0; i < 4; i++) {
         Sleep(rand() % 800);
         StartRead();
-        cout << "читатель " << id << " читает\n";
+        cout << "читатель " << id << " читает\n:";
+        std::string line;
+
+        std::ifstream inp("db.txt");
+        if (inp.is_open())
+        {
+            while (std::getline(inp, line))
+            {
+                std::cout << line << std::endl;
+            }
+        }
+        inp.close();
         EndRead();
     }
     return 0;
@@ -166,8 +178,8 @@ void Task3() {
 int main() {
     setlocale(0, "ru");
 
-    Task1();
-    Task2();
+    //Task1();
+    //Task2();
     Task3();
 
     return 0;
