@@ -1,0 +1,13 @@
+﻿  Source.cpp
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(71,35): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(78,44): warning C4311: 'type cast': pointer truncation from 'LPVOID' to 'LONG'
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(78,44): warning C4302: 'type cast': truncation from 'LPVOID' to 'LONG'
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(88,39): warning C4312: 'type cast': conversion from 'int' to 'LPVOID' of greater size
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(121,15): warning C4311: 'type cast': pointer truncation from 'LPVOID' to 'LONG'
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(121,15): warning C4302: 'type cast': truncation from 'LPVOID' to 'LONG'
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(132,15): warning C4311: 'type cast': pointer truncation from 'LPVOID' to 'LONG'
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(132,15): warning C4302: 'type cast': truncation from 'LPVOID' to 'LONG'
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(142,39): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(157,64): warning C4312: 'type cast': conversion from 'int' to 'LPVOID' of greater size
+F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\ConsoleLab7_var5\Source.cpp(158,65): warning C4312: 'type cast': conversion from 'int' to 'LPVOID' of greater size
+  ConsoleLab7_var5.vcxproj -> F:\Pictures\мои док(и)\.progi\SysProg4course\Systemp_Programming_CPP\labs\ConsoleLab7_var5\x64\Debug\ConsoleLab7_var5.exe
